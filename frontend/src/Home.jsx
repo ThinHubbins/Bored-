@@ -8,7 +8,7 @@ const Home = () => {
   const [secret, setSecret] = useState([]);
   useEffect(() => {
     axios
-      .get("https://ghostpen-backend.onrender.com/api/find")
+      .get("https://bored-fyu9.onrender.com/api/find")
       .then((res) => {
         setSecret(res.data);
       })
