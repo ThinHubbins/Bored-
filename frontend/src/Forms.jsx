@@ -10,8 +10,10 @@ const Form = () => {
     title: "",
     content: ""
   });
+  const [disable, setDisable] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setDisable(true);
     axios
       .post("https://bored-fyu9.onrender.com/", value)
       .then((res)=> {
@@ -70,6 +72,7 @@ const Form = () => {
               <button
                 type="submit"
                 className="btn btn-dark w-100 py-2 rounded-3"
+                disabled={disable}
               >
                 Submit Anonymously 🔒
               </button>
