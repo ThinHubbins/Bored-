@@ -13,7 +13,13 @@ const Form = () => {
   const [disable, setDisable] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDisable(true);
+    if(value.mood.trim() ==="" ||
+    value.title.trim() ==="" ||
+    value.content.trim() ===""){
+      alert('Field cannot be empty')
+    } else {
+      setDisable(true)
+    }
     axios
       .post("https://bored-fyu9.onrender.com/", value)
       .then((res)=> {
